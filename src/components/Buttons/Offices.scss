@@ -1,0 +1,25 @@
+@import '../../utils/style/Variables.scss';
+
+.offices {
+     padding: 15px;
+     color: rgba(255, 255, 255, 0.75);
+     margin: auto;
+     max-width: 700px;
+}
+.office {
+     display: block;
+     padding: 10px;
+     border: 2px solid rgba(255, 255, 255, 0.1);
+     border-radius: 20px;
+     margin: 10px auto;
+     &:hover {
+          border: 2px solid rgba(255, 255, 255, 0.5);
+     }
+}
+
+input[type='radio'] {
+     display: none;
+     &:checked + label {
+          border: 2px solid $light-color;
+     }
+}

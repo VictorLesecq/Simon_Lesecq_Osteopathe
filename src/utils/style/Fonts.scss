@@ -1,0 +1,46 @@
+/*Ci-desssous une implantation de style de Police*/
+@font-face {
+     font-family: 'ambleregular';
+     src: url('../../assets/Style_Site_Simon/Amble-Regular-webfont.woff')
+               format('woff'),
+          url('../../assets/Style_Site_Simon/Amble-Regular-webfont.svg#ambleregular')
+               format('svg');
+     font-weight: normal;
+     font-style: normal;
+}
+
+@font-face {
+     font-family: 'ambleitalic';
+     src: url('../../assets/Style_Site_Simon/Amble-Italic-webfont.woff')
+               format('woff'),
+          url('../../assets/Style_Site_Simon/Amble-Italic-webfont.svg#ambleitalic')
+               format('svg');
+     font-weight: normal;
+     font-style: normal;
+}
+
+@font-face {
+     font-family: 'barlowregular';
+     src: url('../../assets/Style_Site_Simon/Barlow-Regular.otf');
+     font-weight: normal;
+     font-style: normal;
+}
+
+@font-face {
+     font-family: 'barlowmedium';
+     src: url('../../assets/Style_Site_Simon/Barlow-Medium.otf');
+     font-weight: normal;
+     font-style: normal;
+}
+@font-face {
+     font-family: 'lora';
+     src: url('../../assets/Style_Site_Simon/Lora-Regular.ttf');
+     font-weight: normal;
+     font-style: normal;
+}
+@font-face {
+     font-family: 'roboto';
+     src: url('../../assets/Style_Site_Simon/roboto/Roboto-Light.ttf');
+     font-weight: normal;
+     font-style: normal;
+}

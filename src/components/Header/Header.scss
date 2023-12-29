@@ -1,0 +1,186 @@
+@import '../../utils/style/Variables.scss';
+@import '../../utils/style/Fonts.scss';
+
+#top-header {
+     position: fixed;
+     top: 0;
+     width: 100%;
+     z-index: 9999;
+     height: 15vh;
+     border-bottom: 1px solid $primary-color;
+     transition: height 1s;
+}
+
+.top-header-container {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     height: 100%;
+     font-family: ambleregular;
+     color: $light-color;
+     opacity: 0.95;
+     text-transform: uppercase;
+
+     & h2 {
+          font-weight: normal;
+          margin-inline: 30px;
+          font-size: 2rem;
+     }
+
+     &__logo {
+          transition: color 0.3s;
+
+          &_name {
+               font-weight: bold;
+          }
+     }
+
+     @media (max-width: $small) {
+          justify-content: center;
+     }
+}
+
+.navbar {
+     margin-right: 25px;
+
+     & ul {
+          display: flex;
+          margin-block: 0;
+          padding-inline: 0;
+
+          @media (max-width: $small) {
+               position: absolute;
+               inset: 0;
+               height: 100vh;
+               padding-top: 5vh;
+               background: $primary-color;
+               flex-direction: column;
+               justify-content: space-evenly;
+               transform: translateX(-100%);
+               transition: transform 1s;
+          }
+     }
+
+     & li {
+          list-style-type: none;
+     }
+
+     &__link {
+          opacity: 0.75;
+          display: block;
+          padding-inline: 25px;
+          text-decoration: none;
+          text-align: center;
+          color: $light-color;
+          font-size: 0.8em;
+
+          @media (max-width: $small) {
+               font-size: 2rem;
+          }
+
+          &:hover {
+               opacity: 1;
+          }
+
+          &.active {
+               color: $secondary-color;
+          }
+     }
+}
+
+.nav-button {
+     display: none;
+
+     @media (max-width: $small) {
+          display: initial;
+          position: absolute;
+          z-index: 20;
+          right: 15px;
+          padding: 30px;
+     }
+
+     &__icon,
+     &__icon::before,
+     &__icon::after {
+          display: block;
+          width: 22px;
+          height: 2px;
+          background: $light-color;
+          position: absolute;
+          top: 44%;
+          transition: top 0.15s cubic-bezier(0, 1, 0.8, 1) 0.15s,
+               transform 0.15s, background-color 0.15s;
+     }
+
+     &__icon::before {
+          content: '';
+          top: -8px;
+     }
+     &__icon::after {
+          content: '';
+          width: 1rem;
+          top: 8px;
+     }
+}
+
+.top-header-container.open {
+     opacity: 1;
+     transition: opacity 1s;
+
+     & .nav-button__icon {
+          transform: rotate(45deg) translateY(-50%);
+          transition-delay: 0.15s;
+          background: $secondary-color;
+     }
+     & .nav-button__icon::before {
+          top: 0;
+          background: transparent;
+     }
+     & .nav-button__icon::after {
+          top: 0;
+          width: 22px;
+          transform: rotate(90deg);
+          transition-delay: 0.15s;
+          background: $secondary-color;
+     }
+
+     & .navbar ul {
+          transform: translateX(0);
+     }
+
+     & .navbar__link {
+          color: $light-color;
+     }
+}
+
+#top-header.scrolled {
+     height: 10vh;
+
+     & .top-header-container {
+          color: $primary-color;
+          background-color: $light-color;
+
+          & .navbar__link {
+               color: $primary-color;
+               &.active {
+                    color: $secondary-color;
+               }
+          }
+
+          & .nav-button__icon,
+          & .nav-button__icon::before,
+          & .nav-button__icon::after {
+               background: $primary-color;
+          }
+
+          &.open .nav-button__icon,
+          &.open .nav-button__icon::before,
+          &.open .nav-button__icon::after {
+               background: $secondary-color;
+          }
+     }
+
+     & .open .navbar__link {
+          color: $light-color;
+     }
+}
