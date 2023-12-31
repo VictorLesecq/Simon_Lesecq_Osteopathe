@@ -5,8 +5,8 @@
      position: fixed;
      top: 0;
      width: 100%;
-     z-index: 9999;
-     height: 15vh;
+     z-index: 1;
+     height: 110px;
      border-bottom: 1px solid $primary-color;
      transition: height 1s;
 }
@@ -94,7 +94,7 @@
      @media (max-width: $small) {
           display: initial;
           position: absolute;
-          z-index: 20;
+          z-index: 1;
           right: 15px;
           padding: 30px;
      }
@@ -154,7 +154,7 @@
 }
 
 #top-header.scrolled {
-     height: 10vh;
+     height: 75px;
 
      & .top-header-container {
           color: $primary-color;

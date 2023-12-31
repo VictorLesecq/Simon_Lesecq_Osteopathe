@@ -2,11 +2,13 @@
 
 .photo-article__container {
      display: grid;
-     max-width: 80vw;
-     margin: 12vh auto;
+     max-width: 85vw;
+     margin: auto;
+     padding-bottom: 70px;
 
      @media (max-width: $small) {
           display: block;
+          padding-bottom: 30px;
      }
 
      & .photo-article__image {

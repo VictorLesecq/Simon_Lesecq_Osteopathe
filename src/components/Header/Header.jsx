@@ -67,7 +67,7 @@ function Header() {
                                                        ? ' active'
                                                        : ''
                                              }`}
-                                             tabIndex="100"
+                                             tabIndex={index + 100}
                                              href={`#${title}`}
                                              onClick={(e) => setIsOpen(false)}
                                         >
