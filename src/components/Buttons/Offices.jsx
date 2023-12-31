@@ -11,16 +11,16 @@ function Offices(props) {
                     <div key={`${office.zipCode} ${index}}`}>
                          <input
                               type="radio"
-                              name="office"
+                              className={`office ${
+                                   office.id === selectedOffice
+                                        ? ' office-selected'
+                                        : ''
+                              }`}
                               id={office.id}
                               checked={office.id === selectedOffice}
                               onChange={() => handleOfficeChange(office.id)}
                          />
-                         <label
-                              className="office pointer"
-                              data-id-cabinet="0"
-                              htmlFor={office.id}
-                         >
+                         <label className="office pointer" htmlFor={office.id}>
                               {office.adress}, {office.zipCode} {office.town}
                          </label>
                     </div>
