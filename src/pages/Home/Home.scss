@@ -8,7 +8,6 @@
      white-space: pre-line;
 }
 .title h2 {
-     position: relative;
      color: rgb(250, 171, 81);
      font-size: 1.5em;
      font-family: ambleregular;
@@ -78,5 +77,59 @@
 
      @media (max-width: $small) {
           display: block;
+     }
+}
+
+article {
+     & h2 {
+          font-family: Lora;
+          font-size: 2.7em;
+          max-width: 85vw;
+          margin: auto;
+
+          @media (max-width: $small) {
+               text-align: center;
+          }
+     }
+     & h3 {
+          font-family: Lora;
+          font-size: 1.5em;
+     }
+}
+
+.article__container {
+     margin-block: 100px;
+     @media (max-width: $small) {
+          margin-block: 60px;
+     }
+}
+
+.two-column__container {
+     max-width: 85vw;
+     margin: 50px auto;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 30px;
+
+     @media (max-width: $small) {
+          display: block;
+     }
+}
+
+.textCarrousel__text__container {
+     text-align: center;
+     max-width: 80%;
+     margin: auto;
+
+     & h3 {
+          max-width: 70%;
+          margin: 0 auto 30px;
+     }
+
+     & p {
+          font-family: Roboto;
+          color: $grey-color;
+          line-height: 30px;
+          margin-bottom: 7px;
      }
 }

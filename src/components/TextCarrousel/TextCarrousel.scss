@@ -1,0 +1,55 @@
+@import '../../utils/style/Variables';
+
+$translate: translateX(0);
+
+.Carrousel {
+     width: 100%;
+     position: relative;
+     overflow: hidden;
+     margin-top: 30px;
+}
+.Carousel_btn {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     background: transparent;
+     border: none;
+     cursor: pointer;
+     z-index: 10;
+}
+.btn_left {
+     left: 10px;
+     &:hover {
+          left: 20px;
+     }
+}
+.btn_right {
+     right: 10px;
+     &:hover {
+          right: 20px;
+     }
+}
+
+.Carrousel_Container {
+     width: 100%;
+     height: 100%;
+     display: flex;
+     list-style: none;
+     transform: translateX(var(--translateX, 0));
+     & li {
+          height: 100%;
+          width: 100%;
+          flex-shrink: 0;
+          position: relative;
+          text-align: center;
+     }
+}
+
+.CarouselPicture {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+}
+.NumSlide {
+     color: $primary-color;
+}
