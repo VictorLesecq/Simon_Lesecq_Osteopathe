@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './Header.scss';
 
 function Header() {
-     const navList = ['accueil', 'mon_parcours', 'pour_qui', 'carte'];
+     const navList = ['accueil', 'tarif', 'questions', 'pour_qui', 'contact'];
      const [scrolled, setScrolled] = useState(false);
      const [isOpen, setIsOpen] = useState(false);
      const [activeSection, setActiveSection] = useState(null);

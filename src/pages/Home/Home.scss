@@ -63,6 +63,9 @@
      }
 }
 
+section {
+     padding-top: 50px;
+}
 .cards {
      background-color: $lightGrey-color;
      padding: 40px;
@@ -73,7 +76,7 @@
      width: 80vw;
      text-align: center;
      margin: auto;
-     gap: 20px;
+     gap: 30px;
 
      @media (max-width: $small) {
           display: block;
@@ -81,6 +84,7 @@
 }
 
 article {
+     padding-block: 50px;
      & h2 {
           font-family: Lora;
           font-size: 2.7em;
@@ -98,22 +102,63 @@ article {
 }
 
 .article__container {
-     margin-block: 100px;
      @media (max-width: $small) {
           margin-block: 60px;
      }
 }
 
+#questions {
+     background: $primary-color;
+     color: $light-color;
+     font-family: Roboto;
+     & h2 {
+          text-align: center;
+          margin-bottom: 50px;
+          &:after {
+               content: '';
+               height: 5px;
+               width: 200px;
+               background: rgb(255, 255, 255);
+               display: block;
+               left: 50%;
+               position: relative;
+               transform: translate(-50%, 10px);
+          }
+     }
+
+     & p {
+          line-height: 25px;
+          font-size: 1.125em;
+          padding-bottom: 10px;
+     }
+}
+
+#pour_qui {
+     background: $primary-color;
+     color: $light-color;
+}
+
 .two-column__container {
-     max-width: 85vw;
      margin: 50px auto;
      display: grid;
-     grid-template-columns: 1fr 1fr;
      gap: 30px;
+
+     &.equal-column {
+          grid-template-columns: 1fr 1fr;
+     }
+
+     &.two-tier-one-tier-column {
+          grid-template-columns: 2fr 1fr;
+     }
 
      @media (max-width: $small) {
           display: block;
      }
+}
+
+.container--85vw {
+     max-width: 85vw;
+     margin: auto;
 }
 
 .textCarrousel__text__container {
@@ -124,12 +169,31 @@ article {
      & h3 {
           max-width: 70%;
           margin: 0 auto 30px;
+          color: $secondary-color;
      }
 
      & p {
           font-family: Roboto;
-          color: $grey-color;
+          // color: $grey-color;
           line-height: 30px;
           margin-bottom: 7px;
      }
+}
+
+#carte {
+     background: $lightGrey-color;
+     & h2 {
+          color: $light-color;
+     }
+     & h3 {
+          color: $secondary-color;
+     }
+}
+
+.contact__container {
+     text-align: center;
+}
+
+.map__container {
+     width: 50vw;
 }

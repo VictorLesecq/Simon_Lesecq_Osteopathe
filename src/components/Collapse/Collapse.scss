@@ -1,0 +1,65 @@
+@import '../../utils/style/Variables';
+
+.collapse__container {
+     margin-block: 15px;
+}
+
+.collapse__content__container {
+     display: grid;
+     grid-template-rows: 0fr;
+     transition: grid-template-rows 300ms ease-in-out;
+     width: 100%;
+}
+
+.collapse__title {
+     display: flex;
+     justify-content: space-between;
+     color: $primary-color;
+     background: $light-color;
+     padding: 25px;
+     font-weight: bold;
+     font-size: 1.5em;
+}
+button {
+     background: transparent;
+     border: none;
+}
+button:hover {
+     cursor: pointer;
+}
+img {
+     vertical-align: middle;
+     transition: transform 300ms ease-in-out;
+}
+
+.collapse__content__content {
+     background-color: $light-color;
+     color: $primary-color;
+     overflow: hidden;
+     padding-inline: 20px;
+     transition: padding-block 300ms ease-in-out;
+     padding-block: 0px;
+
+     & ul {
+          padding-left: 20px;
+     }
+
+     & li {
+          margin-bottom: 5px;
+     }
+}
+
+.collapse__container-open {
+     & .collapse__title {
+          color: $secondary-color;
+     }
+     & .collapse__content__container {
+          grid-template-rows: 1fr;
+     }
+     & img {
+          transform: rotate(90deg);
+     }
+     & .collapse__content__content {
+          padding-block: 0 20px;
+     }
+}

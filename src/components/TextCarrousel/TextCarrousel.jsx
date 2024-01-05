@@ -74,26 +74,15 @@ function TextCarrousel(props) {
      const slides = useMemo(() => {
           if (children.length > 1) {
                let items = children.map((elem, index) => (
-                    <li key={index}>
-                         {elem}
-                         <span className="NumSlide">
-                              {index + 1}/{children.length}
-                         </span>
-                    </li>
+                    <li key={index}>{elem}</li>
                ));
 
                return [
                     <li key={children.length + 1}>
                          {children[children.length - 1]}
-                         <span className="NumSlide">
-                              {children.length}/{children.length}
-                         </span>
                     </li>,
                     ...items,
-                    <li key={children.length + 2}>
-                         {children[0]}
-                         <span className="NumSlide">1/{children.length}</span>
-                    </li>,
+                    <li key={children.length + 2}>{children[0]}</li>,
                ];
           }
 
