@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './Header.scss';
 
 function Header() {
-     const navList = ['accueil', 'tarif', 'questions', 'pour_qui', 'contact'];
+     const navList = ['accueil', 'questions', 'tarif', 'contact', 'pour_qui'];
      const [scrolled, setScrolled] = useState(false);
      const [isOpen, setIsOpen] = useState(false);
      const [activeSection, setActiveSection] = useState(null);
@@ -24,7 +24,7 @@ function Header() {
 
                if (
                     scrollPosition >= sectionTop &&
-                    scrollPosition < sectionTop + sectionHeight
+                    scrollPosition < sectionTop + sectionHeight 
                ) {
                     setActiveSection(index);
                }

@@ -8,21 +8,26 @@ import Card from '../../components/Card/Card';
 import Offices from '../../components/Buttons/Offices';
 import TextCarrousel from '../../components/TextCarrousel/TextCarrousel';
 import Collapse from '../../components/Collapse/Collapse';
+import LinkButton from '../../components/Buttons/LinkButton';
 
 function Home() {
-     const HSimage = images.find((img) => img.type === 'heroSection');
      const ProfilImage = images.find((img) => img.type === 'profil');
      const { selectedOffice } = useOffice();
 
      return (
           <main>
-               <HeroSection url={HSimage.src}>
+               <HeroSection
+                    url={
+                         offices.find((office) => office.id === selectedOffice)
+                              .heroSectionSrc
+                    }
+               >
                     <div className="title">
                          <h1>Simon LESECQ</h1>
                          <h2>Ostéopathe D.O.</h2>
                     </div>
 
-                    <Offices offices={offices} />
+                    <Offices offices={offices} type="light" />
 
                     <div className="phone">
                          <a className="phone__number" href="tel:0685479237">
@@ -31,38 +36,28 @@ function Home() {
                     </div>
 
                     <div className="link-container">
-                         <div className="link-container__button">
-                              <a
-                                   className="link-container__button__link"
-                                   rel="noreferrer"
-                                   href={
-                                        offices.find(
-                                             (office) =>
-                                                  office.id === selectedOffice
-                                        ).doctolibLink
-                                   }
-                                   target="blank"
-                              >
-                                   <span>Prendre RDV</span>
-                                   <i className="fa-solid fa-calendar-days"></i>
-                              </a>
-                         </div>
-                         <div className="link-container__button">
-                              <a
-                                   className="link-container__button__link"
-                                   rel="noreferrer"
-                                   href={
-                                        offices.find(
-                                             (office) =>
-                                                  office.id === selectedOffice
-                                        ).googleMapLink
-                                   }
-                                   target="_blank"
-                              >
-                                   <span>Itinéraire</span>
-                                   <i className="fa-sharp fa-solid fa-map-location-dot"></i>
-                              </a>
-                         </div>
+                         <LinkButton
+                              type="light"
+                              link={
+                                   offices.find(
+                                        (office) => office.id === selectedOffice
+                                   ).doctolibLink
+                              }
+                         >
+                              <span>Prendre RDV</span>
+                              <i className="fa-solid fa-calendar-days"></i>
+                         </LinkButton>
+                         <LinkButton
+                              type="light"
+                              link={
+                                   offices.find(
+                                        (office) => office.id === selectedOffice
+                                   ).googleMapLink
+                              }
+                         >
+                              <span>Itinéraire</span>
+                              <i className="fa-sharp fa-solid fa-map-location-dot"></i>
+                         </LinkButton>
                     </div>
                </HeroSection>
                <section>
@@ -115,7 +110,7 @@ function Home() {
                                    </>
                               </PhotoArticle>
                               <div className="cards">
-                                   <div className="cards__container container--85vw">
+                                   <div className="cards__container container--80vw">
                                         <Card title="Ma pratique" picto="🔖">
                                              <p>
                                                   Le corps est un système
@@ -159,15 +154,37 @@ function Home() {
                                         </Card>
                                         <Card title="Collaboration" picto="🏥">
                                              <p>Lucie</p>
+
+                                             <p>
+                                                  Lorem, ipsum dolor sit amet
+                                                  consectetur adipisicing elit.
+                                                  Quod blanditiis illum minus
+                                                  aspernatur architecto iste,
+                                                  nihil iusto similique ducimus
+                                                  ullam! Lorem ipsum dolor sit
+                                                  amet consectetur adipisicing
+                                                  elit. Sequi quibusdam aliquam
+                                                  ad quod amet cupiditate, quo
+                                                  neque tenetur eveniet, vero
+                                                  maiores provident optio qui
+                                                  eos.
+                                             </p>
                                              <br />
-                                             <p></p>
+                                             <LinkButton
+                                                  type="secondary"
+                                                  size="large"
+                                                  link="https://www.doctolib.fr/osteopathe/marcq-en-baroeul/lucie-breuilles-marcq-en-baroeul"
+                                             >
+                                                  <span>RDV avec Lucie</span>
+                                                  <i className="fa-solid fa-calendar-days"></i>
+                                             </LinkButton>
                                         </Card>
                                    </div>
                               </div>
                          </div>
                     </article>
                     <article id="questions" className="index">
-                         <div className="article__container container--85vw">
+                         <div className="article__container container--80vw">
                               <h2>Questions Fréquentes</h2>
                               <p>
                                    Je réponds aux interrogations qui pourraient
@@ -229,13 +246,15 @@ function Home() {
                          </div>
                     </article>
                     <article id="tarif" className="index">
-                         <div className="container--85vw">
-                              <div className="two-column__container  equal-column">
+                         <div className="container--80vw">
+                              <div className="two-column__container container equal-column">
                                    <div>
-                                        <h3>Tarifs</h3>
-                                        <p>60€ la consultation</p>
+                                        <h2>Tarifs</h2>
+                                        <p className="subtitle">
+                                             60€ la consultation
+                                        </p>
                                    </div>
-                                   <div>
+                                   <div className="thin-separator-line">
                                         <p>
                                              Ces honoraires vous sont
                                              communiqués à titre indicatif par
@@ -250,34 +269,41 @@ function Home() {
                                              facture par mail, à renseigner à
                                              votre mutuelle.
                                         </p>
-                                        <div className="link-container__button">
-                                             <a
-                                                  className="link-container__button__link"
-                                                  rel="noreferrer"
-                                                  href={
-                                                       offices.find(
-                                                            (office) =>
-                                                                 office.id ===
-                                                                 selectedOffice
-                                                       ).doctolibLink
-                                                  }
-                                                  target="blank"
-                                             >
-                                                  <span>
-                                                       Prendre Rendez-vous
-                                                  </span>
-                                                  <i className="fa-solid fa-calendar-days"></i>
-                                             </a>
-                                        </div>
+                                        <LinkButton
+                                             type="secondary"
+                                             size="large"
+                                             link={
+                                                  offices.find(
+                                                       (office) =>
+                                                            office.id ===
+                                                            selectedOffice
+                                                  ).doctolibLink
+                                             }
+                                        >
+                                             <span>Prendre Rendez-vous</span>
+                                             <i className="fa-solid fa-calendar-days"></i>
+                                        </LinkButton>
                                    </div>
                               </div>
                               <div className="picture-office__container">
-                                   PHOTOS
+                                   {offices
+                                        .find(
+                                             (office) =>
+                                                  office.id === selectedOffice
+                                        )
+                                        .images?.map((image, index) => (
+                                             <img
+                                                  key={`image_${index}`}
+                                                  alt=""
+                                                  src={image.src}
+                                                  srcSet={image.srcset}
+                                             />
+                                        ))}
                               </div>
                          </div>
                     </article>
-                    <article id="carte" className="index">
-                         <div className="two-column__container container--85vw two-tier-one-tier-column">
+                    <article id="contact" className="index">
+                         <div className="two-column__container equal-column">
                               <div className="map__container">
                                    <h3>
                                         En quoi est ce que l'ostéopathie peut
@@ -297,12 +323,12 @@ function Home() {
                               <div className="contact__container">
                                    <h2>Contact</h2>
                                    <h3>Simon Lesecq</h3>
-                                   <Offices offices={offices} />
+                                   <Offices offices={offices} type="dark" />
                               </div>
                          </div>
                     </article>
                     <article id="pour_qui" className="index">
-                         <div className="article__container container--85vw">
+                         <div className="article__container container--80vw">
                               <h2>Pour Qui ?</h2>
                               <div className="two-column__container  equal-column">
                                    <div className="textCarrousel__text__container">

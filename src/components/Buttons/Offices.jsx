@@ -2,11 +2,11 @@ import './Offices.scss';
 import { useOffice } from '../../utils/hooks/hooks';
 
 function Offices(props) {
-     const { offices } = props;
+     const { offices, type } = props;
      const { selectedOffice, handleOfficeChange } = useOffice();
 
      return (
-          <div className="offices">
+          <div className={`offices offices__${type}`}>
                {offices.map((office, index) => (
                     <div key={`${office.zipCode} ${index}}`}>
                          <input

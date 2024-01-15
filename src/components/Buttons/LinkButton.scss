@@ -1,0 +1,71 @@
+@import '../../utils/style/Variables.scss';
+
+.button-link {
+     margin-block: 10px;
+     padding: 10px;
+     border: 2px solid;
+     border-radius: 4px;
+     text-decoration: none;
+     text-align: center;
+     font-family: ambleregular;
+     transition: background-color 0.5s, border 0.5s, transform 0.3s;
+     width: 180px;
+     display: inline-block;
+
+     &__large {
+          width: 100%;
+     }
+
+     &__light {
+          border-color: $light-color;
+          color: $light-color;
+
+          &:hover {
+               transform: translateY(-3px);
+               background: $secondary-color;
+               border: 2px solid $secondary-color;
+
+               & span,
+               i {
+                    color: $primary-color;
+               }
+          }
+     }
+
+     &__primary {
+          border-color: $primary-color;
+          color: $primary-color;
+
+          &:hover {
+               transform: translateY(-3px);
+               background: $secondary-color;
+               border: 2px solid $secondary-color;
+
+               & span,
+               i {
+                    color: $primary-color;
+               }
+          }
+     }
+
+     &__secondary {
+          border-color: $secondary-color;
+          background-color: $secondary-color;
+          color: $primary-color;
+
+          &:hover {
+               transform: translateY(-3px);
+               background: $primary-color;
+               border: 2px solid $primary-color;
+               color: $light-color;
+               & span,
+               i {
+                    color: $light-color;
+               }
+          }
+     }
+
+     & i {
+          margin-left: 10px;
+     }
+}

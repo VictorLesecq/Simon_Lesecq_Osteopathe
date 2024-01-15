@@ -16,13 +16,14 @@
           height: 100%;
           background-image: (var(--url));
           background-size: cover;
+          background-position: center 80%;
           z-index: -1;
           top: 0;
 
           &::before {
                content: '';
                background-color: $primary-color;
-               opacity: 0.9;
+               opacity: 0.85;
                position: absolute;
                inset: 0;
           }

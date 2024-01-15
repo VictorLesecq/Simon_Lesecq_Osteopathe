@@ -1,17 +1,19 @@
 @import '../../utils/style/Variables.scss';
 
-.title h1 {
-     margin-top: 40px;
-     font-weight: normal;
-     font-size: 2.5em;
-     font-family: lora;
-     white-space: pre-line;
-}
-.title h2 {
-     color: rgb(250, 171, 81);
-     font-size: 1.5em;
-     font-family: ambleregular;
-     font-weight: normal;
+.title {
+     & h1 {
+          margin-top: 40px;
+          font-weight: normal;
+          font-size: 2.5em;
+          font-family: lora;
+          white-space: pre-line;
+     }
+     & h2 {
+          color: rgb(250, 171, 81);
+          font-size: 1.5em;
+          font-family: ambleregular;
+          font-weight: normal;
+     }
 }
 
 .phone {
@@ -30,59 +32,19 @@
      display: flex;
      justify-content: center;
      padding-bottom: 30px;
-
-     @media (max-width: $small) {
-          display: block;
-     }
-
-     &__button {
-          margin: 10px 15px;
-          &__link {
-               padding: 10px;
-               border: 2px solid rgb(255, 255, 255);
-               border-radius: 4px;
-               text-decoration: none;
-               color: $light-color;
-               transition: background-color 0.5s, border 0.5s, transform 0.3s;
-               width: 180px;
-               display: inline-block;
-               &:hover {
-                    transform: translateY(-3px);
-                    background: $secondary-color;
-                    border: 2px solid $secondary-color;
-
-                    & span,
-                    i {
-                         color: $primary-color;
-                    }
-               }
-               & i {
-                    margin-left: 10px;
-               }
-          }
-     }
-}
-
-section {
-     padding-top: 50px;
-}
-.cards {
-     background-color: $lightGrey-color;
-     padding: 40px;
-}
-
-.cards__container {
-     display: flex;
-     width: 80vw;
-     text-align: center;
-     margin: auto;
      gap: 30px;
 
      @media (max-width: $small) {
-          display: block;
+          flex-direction: column;
+          gap: 0;
+          align-items: center;
      }
 }
 
+// General Css
+section {
+     padding-top: 50px;
+}
 article {
      padding-block: 50px;
      & h2 {
@@ -90,6 +52,18 @@ article {
           font-size: 2.7em;
           max-width: 85vw;
           margin: auto;
+          text-align: center;
+          margin-bottom: 50px;
+          &:after {
+               content: '';
+               height: 5px;
+               width: 200px;
+               background: $dark-color;
+               display: block;
+               left: 50%;
+               position: relative;
+               transform: translate(-50%, 10px);
+          }
 
           @media (max-width: $small) {
                text-align: center;
@@ -100,44 +74,15 @@ article {
           font-size: 1.5em;
      }
 }
-
+.container--80vw {
+     max-width: 80vw;
+     margin: auto;
+}
 .article__container {
      @media (max-width: $small) {
-          margin-block: 60px;
+          margin-block: 30px;
      }
 }
-
-#questions {
-     background: $primary-color;
-     color: $light-color;
-     font-family: Roboto;
-     & h2 {
-          text-align: center;
-          margin-bottom: 50px;
-          &:after {
-               content: '';
-               height: 5px;
-               width: 200px;
-               background: rgb(255, 255, 255);
-               display: block;
-               left: 50%;
-               position: relative;
-               transform: translate(-50%, 10px);
-          }
-     }
-
-     & p {
-          line-height: 25px;
-          font-size: 1.125em;
-          padding-bottom: 10px;
-     }
-}
-
-#pour_qui {
-     background: $primary-color;
-     color: $light-color;
-}
-
 .two-column__container {
      margin: 50px auto;
      display: grid;
@@ -156,15 +101,135 @@ article {
      }
 }
 
-.container--85vw {
-     max-width: 85vw;
+// css for the presentation part
+.cards {
+     background-color: $lightGrey-color;
+     padding: 40px;
+}
+
+.cards__container {
+     display: flex;
+     width: 80vw;
+     text-align: center;
      margin: auto;
+     gap: 30px;
+
+     @media (max-width: $small) {
+          display: block;
+     }
+}
+
+// css for the questions part
+#questions {
+     background: $primary-color;
+     padding-top: 100px;
+     color: $light-color;
+     font-family: Roboto;
+     & h2:after {
+          background: rgb(255, 255, 255);
+     }
+
+     & p {
+          line-height: 25px;
+          font-size: 1.125em;
+          padding-bottom: 10px;
+     }
+}
+
+.picture-office__container {
+     display: flex;
+     gap: 20px;
+
+     & img {
+          width: 33%;
+          aspect-ratio: 1;
+          object-fit: cover;
+
+          @media (max-width: $small) {
+               width: 100%;
+          }
+     }
+
+     @media (max-width: $small) {
+          flex-direction: column;
+     }
+}
+
+// css for the tarif part
+#tarif {
+     & h2:after {
+          height: 1px;
+
+          @media (max-width: $small) {
+               width: 100px;
+          }
+     }
+     & p {
+          font-family: Roboto;
+          text-align: justify;
+          line-height: 30px;
+     }
+     & .subtitle {
+          font-family: ambleregular;
+          font-size: 1.25em;
+          text-align: center;
+          color: rgb(250, 171, 81);
+     }
+
+     & .container {
+          background-color: $lightGrey-color;
+          padding: 30px;
+          align-items: center;
+     }
+
+     .thin-separator-line {
+          padding: 20px 0px 20px 40px;
+          border-left: 1px solid $dark-color;
+
+          @media (max-width: $small) {
+               padding: 30px;
+               border-left: 0px solid $dark-color;
+               border-top: 1px solid $dark-color;
+               padding-top: 30px;
+          }
+     }
+}
+
+// css for the map part
+#contact {
+     font-family: ambleregular;
+     background: $lightGrey-color;
+     padding: 100px 30px 50px 30px;
+
+     & h2 {
+          margin-bottom: 25px;
+     }
+     & h3 {
+          color: $secondary-color;
+     }
+}
+
+.contact__container {
+     text-align: center;
+}
+
+.map__container {
+     // width: 50vw;
+}
+
+// css for the text-carrousel part
+#pour_qui {
+     background: $primary-color;
+     color: $light-color;
+     & h2:after {
+          background: rgb(255, 255, 255);
+          left: calc(50% - 5px);
+     }
 }
 
 .textCarrousel__text__container {
      text-align: center;
-     max-width: 80%;
-     margin: auto;
+     margin-block: 30px;
 
      & h3 {
           max-width: 70%;
@@ -178,22 +243,4 @@ article {
           line-height: 30px;
           margin-bottom: 7px;
      }
-}
-
-#carte {
-     background: $lightGrey-color;
-     & h2 {
-          color: $light-color;
-     }
-     & h3 {
-          color: $secondary-color;
-     }
-}
-
-.contact__container {
-     text-align: center;
-}
-
-.map__container {
-     width: 50vw;
 }
