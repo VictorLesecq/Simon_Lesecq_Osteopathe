@@ -18,15 +18,15 @@ $translate: translateX(0);
      padding: 30px;
 }
 .btn_left {
-     left: -10px;
+     left: -20px;
      &:hover {
-          left: -20px;
+          left: -30px;
      }
 }
 .btn_right {
-     right: -10px;
+     right: -20px;
      &:hover {
-          right: -20px;
+          right: -30px;
      }
 }
 
@@ -42,6 +42,7 @@ $translate: translateX(0);
           flex-shrink: 0;
           position: relative;
           text-align: center;
+          padding-inline: 60px;
      }
 }
 

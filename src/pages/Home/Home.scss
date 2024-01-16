@@ -92,8 +92,8 @@ article {
           grid-template-columns: 1fr 1fr;
      }
 
-     &.two-tier-one-tier-column {
-          grid-template-columns: 2fr 1fr;
+     &.one-third-two-third-column {
+          grid-template-columns: 3fr 4fr;
      }
 
      @media (max-width: $small) {
@@ -200,6 +200,7 @@ article {
      font-family: ambleregular;
      background: $lightGrey-color;
      padding: 100px 30px 50px 30px;
+     margin-bottom: 50px;
 
      & h2 {
           margin-bottom: 25px;

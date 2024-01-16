@@ -330,7 +330,7 @@ function Home() {
                     <article id="pour_qui" className="index">
                          <div className="article__container container--80vw">
                               <h2>Pour Qui ?</h2>
-                              <div className="two-column__container  equal-column">
+                              <div className="two-column__container one-third-two-third-column">
                                    <div className="textCarrousel__text__container">
                                         <h3>
                                              En quoi est ce que l'ostéopathie

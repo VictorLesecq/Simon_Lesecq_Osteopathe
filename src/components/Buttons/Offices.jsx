@@ -11,9 +11,9 @@ function Offices(props) {
                     <div key={`${office.zipCode} ${index}}`}>
                          <input
                               type="radio"
-                              className={`office ${
+                              className={`${
                                    office.id === selectedOffice
-                                        ? ' office-selected'
+                                        ? 'office-selected'
                                         : ''
                               }`}
                               id={office.id}
