@@ -36,19 +36,19 @@ input[type='radio'] {
 }
 
 .offices__dark {
-     color: $dark-color;
+     color: $primary-color;
 
      & .office {
-          border: 2px solid rgba(0, 0, 0, 0.1);
+          border: 2px solid rgba(2, 65, 64, 0.1);
 
           &:hover {
-               border: 2px solid rgba(0, 0, 0, 0.5);
+               border: 2px solid rgba(2, 65, 64, 0.5);
           }
      }
      & .office-selected + label {
-          border: 2px solid $dark-color;
+          border: 2px solid $primary-color;
           &:hover {
-               border: 2px solid $dark-color;
+               border: 2px solid $primary-color;
           }
      }
 }

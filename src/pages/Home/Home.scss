@@ -90,6 +90,8 @@ article {
 
      &.equal-column {
           grid-template-columns: 1fr 1fr;
+          align-items: center;
+          justify-items: center;
      }
 
      &.one-third-two-third-column {
@@ -204,6 +206,10 @@ article {
 
      & h2 {
           margin-bottom: 25px;
+          color: $primary-color;
+          &:after {
+               background: $primary-color;
+          }
      }
      & h3 {
           color: $secondary-color;
@@ -212,10 +218,12 @@ article {
 
 .contact__container {
      text-align: center;
+     min-width: 80%;
 }
 
-.map__container {
-     // width: 50vw;
+iframe {
+     max-width: 100%;
+     aspect-ratio: 6/4.5;
 }
 
 // css for the text-carrousel part

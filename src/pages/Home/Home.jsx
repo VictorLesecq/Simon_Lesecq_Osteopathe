@@ -305,20 +305,23 @@ function Home() {
                     <article id="contact" className="index">
                          <div className="two-column__container equal-column">
                               <div className="map__container">
-                                   <h3>
-                                        En quoi est ce que l'ostéopathie peut
-                                        vous aider ?{' '}
-                                   </h3>
-                                   <p>
-                                        L’ostéopathe va pratiquer des
-                                        manipulations manuelles du système
-                                        musculo-squelettique et utiliser des
-                                        techniques de relâchement myofascial
-                                        afin de soulager les tensions, les
-                                        déséquilibres et les douleurs. Ainsi que
-                                        des conseils précieux à suivre dans
-                                        votre quotidien.
-                                   </p>
+                                   <iframe
+                                        src={
+                                             offices.find(
+                                                  (office) =>
+                                                       office.id ===
+                                                       selectedOffice
+                                             ).googleMapIFrameLink
+                                        }
+                                        width="600"
+                                        title="office"
+                                        allowFullScreen=""
+                                        loading="lazy"
+                                        referrerPolicy="no-referrer-when-downgrade"
+                                        style={{
+                                             border: '2px solid rgb(2,65,64)',
+                                        }}
+                                   ></iframe>
                               </div>
                               <div className="contact__container">
                                    <h2>Contact</h2>
