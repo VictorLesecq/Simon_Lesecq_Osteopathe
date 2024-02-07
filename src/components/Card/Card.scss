@@ -4,19 +4,30 @@
      width: 33.33%;
      padding-bottom: 20px;
      padding-top: 20px;
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
 
      @media (max-width: $small) {
           width: 100%;
      }
-
-     &::before {
-          content: attr(data-icon);
-          font-size: 40px;
+     & img {
+          width: 85px;
+          margin-bottom: 30px;
+          &:hover + .picto__link {
+               display: block;
+               position: absolute;
+               top: -5px;
+               color: $grey-color;
+               opacity: 0.3;
+          }
      }
 
      & p {
           font-family: Roboto;
-          text-align: justify;
+          text-align: center;
+          font-weight: 800;
           color: $grey-color;
           line-height: 30px;
      }

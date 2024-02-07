@@ -1,10 +1,11 @@
 import './Card.scss';
 
 function Card(props) {
-     const { title, subTitle, picto, children } = props;
+     const { subTitle, picto, children } = props;
      return (
-          <div className="card" data-icon={picto}>
-               <h3 className="card__title">{title}</h3>
+          <div className="card">
+               <img src={picto.src} alt="" />
+               <div className="picto"></div>
                {subTitle ? <p className="card__subtitle">{subTitle}</p> : null}
                {children}
           </div>
