@@ -1,0 +1,69 @@
+@import '../../utils/style/Variables.scss';
+
+.info__container {
+     --overflow: hidden;
+     --scale: 0;
+     --border-left: 50%;
+     --border-right: 25px;
+     --transition: transform 0s;
+     &-left {
+          --translate: -100%;
+          --transform-origin: right;
+          --padding-inline: 25px 10px;
+          &:hover {
+               --border-left: 0 50% 50% 0;
+               --border-right: 25px 0 0 25px;
+          }
+     }
+     &-right {
+          --translate: 20px;
+          --transform-origin: left;
+          --padding-inline: 10px 25px;
+          &:hover {
+               --border-left: 50% 0 0 50%;
+               --border-right: 0 25px 25px 0;
+          }
+     }
+     &:hover {
+          --overflow: initial;
+          --scale: 1;
+          --transition: transform 0.5s;
+     }
+
+     color: $grey-color;
+     position: relative;
+     font-size: 0.8em;
+     overflow: var(--overflow);
+     cursor: default;
+
+     & .info__picto {
+          justify-content: center;
+          display: flex;
+          align-items: center;
+          background-color: $lightGrey-color;
+          border-radius: var(--border-left);
+          width: 20px;
+          height: 20px;
+     }
+
+     & .info__message {
+          position: absolute;
+          left: 0;
+          top: 0;
+          transform: translateX(var(--translate)) scaleX(var(--scale));
+          transition: var(--transition);
+          transform-origin: var(--transform-origin);
+          padding-inline: var(--padding-inline);
+          border-radius: var(--border-right);
+          background-color: $lightGrey-color;
+          height: 20px;
+          width: max-content;
+          display: flex;
+          align-items: center;
+          white-space: pre;
+
+          & a {
+               color: $grey-color;
+          }
+     }
+}

@@ -1,5 +1,4 @@
 @import '../../utils/style/Variables.scss';
-@import '../../utils/style/Fonts.scss';
 
 .hero-section-container {
      text-align: center;
@@ -7,14 +6,14 @@
      font-family: ambleregular;
      position: relative;
      // min-width: 370px;
-     margin: auto;
+     // margin: auto;
      padding-top: 110px;
 
      &__image {
           position: absolute;
           width: 100%;
           height: 100%;
-          background-image: (var(--url));
+          background-image: var(--url);
           background-size: cover;
           background-position: center 80%;
           z-index: -1;
@@ -22,7 +21,7 @@
 
           &::before {
                content: '';
-               background-color: $primary-color;
+               background-color: var(--backgroundColor);
                opacity: 0.85;
                position: absolute;
                inset: 0;

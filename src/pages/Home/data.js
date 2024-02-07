@@ -18,6 +18,31 @@ import imgProfilDefault from '../../assets/images/photo_vache_500px.jpg';
 import imgProfil1000 from '../../assets/images/photo_vache_1000px.jpg';
 import imgProfil1500 from '../../assets/images/photo_vache_1500px.jpg';
 
+import picto__one from '../../assets/images/picto/teachings.png';
+import picto__two from '../../assets/images/picto/massage.png';
+import picto__three from '../../assets/images/picto/collaborate.png';
+
+export const picto = [
+     {
+          id: 'picto1',
+          src: picto__one,
+          author: 'https://www.flaticon.com/free-icons/teaching',
+          message: 'rddrt',
+     },
+     {
+          id: 'picto2',
+          src: picto__two,
+          author: 'https://www.flaticon.com/fr/icones-gratuites/massage',
+          message: 'freepik',
+     },
+     {
+          id: 'picto3',
+          src: picto__three,
+          author: 'https://www.flaticon.com/free-icons/collaboration',
+          message: 'small.smiles',
+     },
+];
+
 export const images = [
      {
           id: 'photo2',
@@ -33,6 +58,9 @@ export const offices = [
           id: 'c3',
           town: 'Marcq-en-Barœul',
           heroSectionSrc: imgPhoto1,
+          heroSectionPhotoLink:
+               'https://www.pexels.com/fr-fr/@matteo-angeloni-106557007/',
+          heroSectionPhotoAuthor: 'Matteo Angeloni',
           zipCode: '59700',
           adress: '3 Place Clovis Tiers',
           googleMapLink: 'https://goo.gl/maps/qMUoPkviy7ZhFjCQ8',
@@ -59,6 +87,8 @@ export const offices = [
           id: 'c2',
           town: 'Dunkerque',
           heroSectionSrc: imgPhoto2,
+          heroSectionPhotoLink: 'https://www.pexels.com/fr-fr/@fotios-photos/',
+          heroSectionPhotoAuthor: 'Lisa Fotios',
           zipCode: '59240',
           adress: '574 Avenue du Stade',
           googleMapLink: 'https://goo.gl/maps/xfS49Jq9JgAh7P3BA',
@@ -85,6 +115,8 @@ export const offices = [
           id: 'c1',
           town: 'Wasquehal',
           heroSectionSrc: imgPhoto3,
+          heroSectionPhotoLink: 'https://unsplash.com/fr/@zhuyx',
+          heroSectionPhotoAuthor: 'Zhu Yunxiao',
           zipCode: '59290',
           adress: '12 Rue de la Ladrié',
           googleMapLink: 'https://goo.gl/maps/xxwBeVjKWDJpxf356',
