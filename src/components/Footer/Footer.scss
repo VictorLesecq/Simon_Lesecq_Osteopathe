@@ -1,0 +1,51 @@
+@import '../../utils/style/Variables.scss';
+
+footer {
+     font-family: roboto;
+     text-align: center;
+     background: linear-gradient(#0e5150, #207876);
+     color: $light-color;
+
+     & ul {
+          display: flex;
+          justify-content: center;
+          gap: 50px;
+          padding-block: 20px;
+     }
+
+     & li {
+          list-style-type: none;
+     }
+
+     & .legislation__container li {
+          transform: scale(1);
+          transition: transform 0.5s;
+          &:hover {
+               transform: scale(1.2);
+          }
+          & a {
+               color: $light-color;
+               text-decoration: none;
+               font-weight: 600;
+          }
+     }
+
+     .legislation__info {
+          font-size: 0.9em;
+
+          & a {
+               text-decoration: none;
+               color: $light-color;
+
+               &:hover {
+                    text-decoration: underline;
+               }
+          }
+     }
+     .logo__picto {
+          transform: scale(1);
+          &:hover {
+               transform: scale(1.2);
+          }
+     }
+}
