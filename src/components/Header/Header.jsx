@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import './Header.scss';
 
 function Header() {
      const navList = ['accueil', 'questions', 'tarif', 'contact', 'pour_qui'];
-     const [scrolled, setScrolled] = useState(false);
      const [isOpen, setIsOpen] = useState(false);
+     const [scrolled, setScrolled] = useState(false);
      const [activeSection, setActiveSection] = useState(null);
+     const location = useLocation();
+     const [isTransparent, setIsTransparent] = useState(true);
+
+     useEffect(() => {
+          setActiveSection(null);
+          setIsTransparent(location.pathname === '/');
+          return () => {};
+     }, [location]);
 
      const handleScroll = () => {
           if (window.scrollY > 0) {
@@ -16,15 +25,13 @@ function Header() {
           }
 
           const sections = document.querySelectorAll('.index');
-
           sections.forEach((section, index) => {
                const sectionTop = section.offsetTop;
                const sectionHeight = section.clientHeight;
                const scrollPosition = window.scrollY + 1;
-
                if (
                     scrollPosition >= sectionTop &&
-                    scrollPosition < sectionTop + sectionHeight 
+                    scrollPosition < sectionTop + sectionHeight
                ) {
                     setActiveSection(index);
                }
@@ -44,7 +51,12 @@ function Header() {
      };
 
      return (
-          <header id="top-header" className={`${scrolled ? 'scrolled' : ''}`}>
+          <header
+               id="top-header"
+               className={`${scrolled ? 'scrolled' : ''} ${
+                    isTransparent ? 'transparent' : ''
+               }`}
+          >
                <div className={`top-header-container  ${isOpen ? 'open' : ''}`}>
                     <div className="top-header-container__logo">
                          <h2>
@@ -68,7 +80,7 @@ function Header() {
                                                        : ''
                                              }`}
                                              tabIndex={index + 100}
-                                             href={`#${title}`}
+                                             href={`/#${title}`}
                                              onClick={(e) => setIsOpen(false)}
                                         >
                                              {title.split('_').join(' ')}
