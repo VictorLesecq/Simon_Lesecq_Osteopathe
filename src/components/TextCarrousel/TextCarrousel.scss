@@ -14,7 +14,6 @@ $translate: translateX(0);
      background: transparent;
      border: none;
      cursor: pointer;
-     z-index: 10;
      padding: 30px;
 }
 .btn_left {
@@ -36,6 +35,7 @@ $translate: translateX(0);
      display: flex;
      list-style: none;
      transform: translateX(var(--translateX, 0));
+
      & li {
           height: 100%;
           width: 100%;

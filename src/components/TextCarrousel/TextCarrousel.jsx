@@ -17,10 +17,11 @@ function TextCarrousel(props) {
      const containerRef = useRef();
      const [current, setCurrent] = useState(1);
      const [translateX, setTranslateX] = useState(0);
+     const [isHovered, setIsHovered] = useState(false);
 
      const actionHandler = useCallback(
           (mode) => {
-               containerRef.current.style.transitionDuration = '400ms';
+               containerRef.current.style.transitionDuration = '1500ms';
                if (mode === 'prev') {
                     if (current <= 1) {
                          setTranslateX(0);
@@ -100,18 +101,34 @@ function TextCarrousel(props) {
           };
      }, [current]);
 
-     //Position first element, this will rendre only ones
+     //Position first element, this will render only ones
      useLayoutEffect(() => {
           setTranslateX(containerRef.current.clientWidth * current);
           // eslint-disable-next-line
      }, []);
 
+     useEffect(() => {
+          const intervalId = setInterval(() => {
+               if (!isHovered) {
+                    actionHandler('next');
+               }
+          }, 5000);
+          return () => clearInterval(intervalId);
+     }, [actionHandler, isHovered]);
+
      return (
-          <div className="Carrousel">
+          <div
+               className="Carrousel"
+               onMouseEnter={() => setIsHovered(true)}
+               onMouseLeave={() => setIsHovered(false)}
+          >
                <ul
                     className="Carrousel_Container"
                     ref={containerRef}
-                    style={{ '--translateX': `-${translateX}px` }}
+                    style={{
+                         '--translateX': `-${translateX}px`,
+                         transitionTimingFunction: 'ease-in-out',
+                    }}
                >
                     {slides}
                </ul>
