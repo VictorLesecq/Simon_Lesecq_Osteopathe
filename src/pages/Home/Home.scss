@@ -42,10 +42,10 @@
 }
 
 // General Css
-section {
+.home__main section {
      padding-top: 50px;
 }
-article {
+.home__main article {
      padding-block: 50px;
      & h2 {
           font-family: Lora;
@@ -74,17 +74,13 @@ article {
           font-size: 1.5em;
      }
 }
-.container--80vw {
-     max-width: 80vw;
-     margin: auto;
-}
+
 .article__container {
      @media (max-width: $small) {
           margin-block: 30px;
      }
 }
 .two-column__container {
-     margin: 50px auto;
      display: grid;
      gap: 30px;
 
@@ -107,6 +103,18 @@ article {
 .cards {
      background-color: $lightGrey-color;
      padding: 40px;
+     position: relative;
+
+     & h3 {
+          text-align: center;
+          margin-bottom: 32px;
+     }
+
+     & .info__button-position {
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+     }
 }
 
 .cards__container {
@@ -114,7 +122,8 @@ article {
      width: 80vw;
      text-align: center;
      margin: auto;
-     gap: 30px;
+     gap: 32px;
+     position: relative;
 
      @media (max-width: $small) {
           display: block;
@@ -159,8 +168,10 @@ article {
 
 // css for the tarif part
 #tarif {
+     color: $primary-color;
      & h2:after {
           height: 1px;
+          background: $primary-color;
 
           @media (max-width: $small) {
                width: 100px;
@@ -182,16 +193,22 @@ article {
           background-color: $lightGrey-color;
           padding: 30px;
           align-items: center;
+          margin: 50px;
+
+          @media (max-width: $small) {
+               margin: auto;
+               margin-bottom: 50px;
+          }
      }
 
      .thin-separator-line {
           padding: 20px 0px 20px 40px;
-          border-left: 1px solid $dark-color;
+          border-left: 1px solid $primary-color;
 
           @media (max-width: $small) {
                padding: 30px;
-               border-left: 0px solid $dark-color;
-               border-top: 1px solid $dark-color;
+               border-left: 0px solid $primary-color;
+               border-top: 1px solid $primary-color;
                padding-top: 30px;
           }
      }
@@ -221,15 +238,16 @@ article {
      min-width: 80%;
 }
 
-iframe {
+.home__main iframe {
      max-width: 100%;
      aspect-ratio: 6/4.5;
 }
 
 // css for the text-carrousel part
 #pour_qui {
-     background: $primary-color;
+     background: linear-gradient($primary-color, #0e5150);
      color: $light-color;
+     padding-top: 100px;
      & h2:after {
           background: rgb(255, 255, 255);
           left: calc(50% - 5px);
